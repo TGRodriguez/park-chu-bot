@@ -1,0 +1,57 @@
+Alemania,:flag_de:
+Austria,:flag_at:
+Bélgica,:flag_be:
+Bulgaria,:flag_bg:
+Croacia,:flag_hr:
+Dinamarca,:flag_dk:
+Escocia,:scotland:
+Eslovaquia,:flag_sk:
+Eslovenia,:flag_si:
+España,:flag_es:
+Finlandia,:flag_fi:
+Francia,:flag_fr:
+Gales,:wales:
+Grecia,:flag_gr:
+Hungría,:flag_hu: 
+Inglaterra,:england:
+Irlanda,:flag_ie:
+Irlanda del Norte,(No esta la bandera en discord, no molestes flaco) 
+Italia,:flag_it:
+Letonia,:flag_lv: 
+Noruega,:flag_no: 
+Países Bajos,:flag_nl:
+Polonia,:flag_pl: 
+Portugal,:flag_pt:
+República Checa,:flag_cz: 
+Rumania,:flag_ro: 
+Rusia,:flag_ru: 
+Serbia,:flag_rs: 
+Suecia,:flag_se:
+Suiza,:flag_ch: 
+Turquía,:flag_tr: 
+Ucrania,:flag_ua: 
+Angola,:flag_ao:
+Camerún,:flag_cm: 
+Costa de Marfil,:flag_ci: 
+Ghana,:flag_gh: 
+Nigeria,:flag_ng: 
+Sudáfrica,:flag_za: 
+Togo,:flag_tg:
+Túnez,:flag_tn:
+Argentina,:flag_ar: 
+Brasil,:flag_br:
+Chile,:flag_cl: 
+Colombia,:flag_co:
+Costa Rica,:flag_cr: 
+Ecuador,:flag_ec: 
+Estados Unidos,:flag_us:
+México,:flag_mx: 
+Paraguay,:flag_py: 
+Perú,:flag_pe: 
+Trinidad y Tobago,:flag_tt: 
+Uruguay,:flag_uy:
+Arabia Saudita,:flag_sa:
+Australia,:flag_au: 
+Corea del Sur,:flag_kr: 
+Irán,:flag_ir: 
+Japón,:flag_jp:
