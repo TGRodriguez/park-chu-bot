@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for park-chu-bot on 2023-08-27T13:00:00-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "park-chu-bot"
+primary_region = "eze"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[build]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+    
