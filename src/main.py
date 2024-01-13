@@ -22,6 +22,7 @@ selecciones = cargar_selecciones("src/selecciones.txt")
 
 bot = discord.Bot()
 
+
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user} (ID: {bot.user.id})")
@@ -424,7 +425,6 @@ async def jugador(ctx):
                        \nPosiciones Disponibles: {jugador['positions']}
                        """
         )
-
 
 
 bot.run(os.environ.get("DISCORD_BOT_TOKEN"))
