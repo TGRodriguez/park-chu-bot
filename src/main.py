@@ -29,13 +29,10 @@ async def on_ready():
     print("------")
 
 
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    if message.content == "selesion":
-        seleccion, bandera = random.choice(selecciones)
-        await message.channel.send(f"Mirá capo te toca jugar con {seleccion} {bandera}")
+@bot.command()
+async def selesion(ctx):
+    seleccion, bandera = random.choice(selecciones)
+    await ctx.send(f"Mirá capo te toca jugar con {seleccion} {bandera}")
 
 
 class FavouredSide(discord.ui.View):
@@ -116,27 +113,34 @@ class NationalityView(discord.ui.View):
 
     @discord.ui.select(
         placeholder="Europa A",
+        # all the options with the label in spanish and value in english
         options=[
-            discord.SelectOption(label="Alemania", value="Alemania"),
+            discord.SelectOption(label="Albania", value="Albania"),
             discord.SelectOption(label="Austria", value="Austria"),
-            discord.SelectOption(label="Bélgica", value="Bélgica"),
+            discord.SelectOption(label="Bielorrusia", value="Belarus"),
+            discord.SelectOption(label="Bélgica", value="Belgium"),
+            discord.SelectOption(
+                label="Bosnia y Herzegovina", value="Bosnia and Herzegovina"
+            ),
             discord.SelectOption(label="Bulgaria", value="Bulgaria"),
-            discord.SelectOption(label="Croacia", value="Croacia"),
-            discord.SelectOption(label="Dinamarca", value="Dinamarca"),
-            discord.SelectOption(label="Finlandia", value="Finlandia"),
-            discord.SelectOption(label="Francia", value="Francia"),
-            discord.SelectOption(label="Grecia", value="Grecia"),
-            discord.SelectOption(label="Hungría", value="Hungría"),
-            discord.SelectOption(label="Inglaterra", value="Inglaterra"),
-            discord.SelectOption(label="Irlanda", value="Irlanda"),
-            discord.SelectOption(label="Irlanda del Norte", value="Irlanda del Norte"),
-            discord.SelectOption(label="Italia", value="Italia"),
-            discord.SelectOption(label="Letonia", value="Letonia"),
-            discord.SelectOption(label="Noruega", value="Noruega"),
-            discord.SelectOption(label="Países Bajos", value="Países Bajos"),
-            discord.SelectOption(label="Polonia", value="Polonia"),
-            discord.SelectOption(label="Portugal", value="Portugal"),
-            discord.SelectOption(label="República Checa", value="República Checa"),
+            discord.SelectOption(label="Croacia", value="Croatia"),
+            discord.SelectOption(label="Chipre", value="Cyprus"),
+            discord.SelectOption(label="República Checa", value="Czech Republic"),
+            discord.SelectOption(label="Dinamarca", value="Denmark"),
+            discord.SelectOption(label="Inglaterra", value="England"),
+            discord.SelectOption(label="Estonia", value="Estonia"),
+            discord.SelectOption(label="Finlandia", value="Finland"),
+            discord.SelectOption(label="Francia", value="France"),
+            discord.SelectOption(label="Alemania", value="Germany"),
+            discord.SelectOption(label="Grecia", value="Greece"),
+            discord.SelectOption(label="Hungría", value="Hungary"),
+            discord.SelectOption(label="Islandia", value="Iceland"),
+            discord.SelectOption(label="Irlanda", value="Ireland"),
+            discord.SelectOption(label="Italia", value="Italy"),
+            discord.SelectOption(label="Letonia", value="Latvia"),
+            discord.SelectOption(label="Liechtenstein", value="Liechtenstein"),
+            discord.SelectOption(label="Lituania", value="Lithuania"),
+            discord.SelectOption(label="Macedonia", value="Macedonia"),
         ],
     )
     async def select_callback_europe_a(self, select, interaction):
@@ -145,20 +149,24 @@ class NationalityView(discord.ui.View):
     @discord.ui.select(
         placeholder="Europa B",
         options=[
-            discord.SelectOption(label="Rumania", value="Rumania"),
-            discord.SelectOption(label="Rusia", value="Rusia"),
-            discord.SelectOption(label="Escocia", value="Escocia"),
+            discord.SelectOption(label="Países Bajos", value="Netherlands"),
+            discord.SelectOption(label="Irlanda del Norte", value="Northern Ireland"),
+            discord.SelectOption(label="Noruega", value="Norway"),
+            discord.SelectOption(label="Polonia", value="Poland"),
+            discord.SelectOption(label="Portugal", value="Portugal"),
+            discord.SelectOption(label="Rumania", value="Romania"),
+            discord.SelectOption(label="Rusia", value="Russia"),
+            discord.SelectOption(label="Escocia", value="Scotland"),
             discord.SelectOption(
-                label="Serbia y Montenegro", value="Serbia y Montenegro"
+                label="Serbia y Montenegro", value="Serbia and Montenegro"
             ),
-            discord.SelectOption(label="Eslovaquia", value="Eslovaquia"),
-            discord.SelectOption(label="Eslovenia", value="Eslovenia"),
-            discord.SelectOption(label="España", value="España"),
-            discord.SelectOption(label="Suecia", value="Suecia"),
-            discord.SelectOption(label="Suiza", value="Suiza"),
-            discord.SelectOption(label="Turquía", value="Turquía"),
-            discord.SelectOption(label="Ucrania", value="Ucrania"),
-            discord.SelectOption(label="Gales", value="Gales"),
+            discord.SelectOption(label="Eslovaquia", value="Slovakia"),
+            discord.SelectOption(label="Eslovenia", value="Slovenia"),
+            discord.SelectOption(label="España", value="Spain"),
+            discord.SelectOption(label="Suecia", value="Sweden"),
+            discord.SelectOption(label="Suiza", value="Switzerland"),
+            discord.SelectOption(label="Ucrania", value="Ukraine"),
+            discord.SelectOption(label="Gales", value="Wales"),
         ],
     )
     async def select_callback_europe_b(self, select, interaction):
@@ -168,13 +176,30 @@ class NationalityView(discord.ui.View):
         placeholder="África",
         options=[
             discord.SelectOption(label="Angola", value="Angola"),
-            discord.SelectOption(label="Camerún", value="Camerún"),
-            discord.SelectOption(label="Costa de Marfil", value="Costa de Marfil"),
+            discord.SelectOption(label="Benin", value="Benin"),
+            discord.SelectOption(label="Burkina Faso", value="Burkina Faso"),
+            discord.SelectOption(label="Cabo Verde", value="Cape Verde"),
+            discord.SelectOption(label="Camerún", value="Cameroon"),
+            discord.SelectOption(label="RD Congo", value="DR Congo"),
+            discord.SelectOption(label="Costa de Marfil", value="Cote d'Ivoire"),
+            discord.SelectOption(label="Egipto", value="Egypt"),
+            discord.SelectOption(label="Gabón", value="Gabon"),
+            discord.SelectOption(label="Gambia", value="Gambia"),
             discord.SelectOption(label="Ghana", value="Ghana"),
+            discord.SelectOption(label="Guinea", value="Guinea"),
+            discord.SelectOption(label="Guinea-Bissau", value="Guinea-Bissau"),
+            discord.SelectOption(label="Guinea Ecuatorial", value="Equatorial Guinea"),
+            discord.SelectOption(label="Kenia", value="Kenya"),
             discord.SelectOption(label="Nigeria", value="Nigeria"),
-            discord.SelectOption(label="Sudáfrica", value="Sudáfrica"),
+            discord.SelectOption(label="Senegal", value="Senegal"),
+            discord.SelectOption(label="Sudáfrica", value="South Africa"),
+            discord.SelectOption(label="Libia", value="Libya"),
+            discord.SelectOption(label="Liberia", value="Liberia"),
+            discord.SelectOption(label="Mali", value="Mali"),
+            discord.SelectOption(label="Mozambique", value="Mozambique"),
+            discord.SelectOption(label="Zimbabue", value="Zimbabwe"),
             discord.SelectOption(label="Togo", value="Togo"),
-            discord.SelectOption(label="Túnez", value="Túnez"),
+            discord.SelectOption(label="Sierra Leona", value="Sierra Leone"),
         ],
     )
     async def select_callback_africa(self, select, interaction):
@@ -184,17 +209,29 @@ class NationalityView(discord.ui.View):
         placeholder="América",
         options=[
             discord.SelectOption(label="Argentina", value="Argentina"),
-            discord.SelectOption(label="Brasil", value="Brasil"),
+            discord.SelectOption(label="Bolivia", value="Bolivia"),
+            discord.SelectOption(label="Brasil", value="Brazil"),
+            discord.SelectOption(label="Canadá", value="Canada"),
             discord.SelectOption(label="Chile", value="Chile"),
             discord.SelectOption(label="Colombia", value="Colombia"),
             discord.SelectOption(label="Costa Rica", value="Costa Rica"),
             discord.SelectOption(label="Ecuador", value="Ecuador"),
-            discord.SelectOption(label="Estados Unidos", value="Estados Unidos"),
-            discord.SelectOption(label="México", value="México"),
+            discord.SelectOption(label="Honduras", value="Honduras"),
+            discord.SelectOption(label="Jamaica", value="Jamaica"),
+            discord.SelectOption(label="México", value="Mexico"),
+            discord.SelectOption(label="Panamá", value="Panama"),
             discord.SelectOption(label="Paraguay", value="Paraguay"),
-            discord.SelectOption(label="Perú", value="Perú"),
-            discord.SelectOption(label="Trinidad y Tobago", value="Trinidad y Tobago"),
+            discord.SelectOption(label="Perú", value="Peru"),
+            discord.SelectOption(label="Estados Unidos", value="United States"),
             discord.SelectOption(label="Uruguay", value="Uruguay"),
+            discord.SelectOption(label="Venezuela", value="Venezuela"),
+            discord.SelectOption(label="Granada", value="Grenada"),
+            discord.SelectOption(label="Guadalupe", value="Guadeloupe"),
+            discord.SelectOption(label="Martinica", value="Martinique"),
+            discord.SelectOption(label="Trinidad y Tobago", value="Trinidad and Tobago"),
+            discord.SelectOption(
+                label="Antillas Neerlandesas", value="Netherlands Antilles"
+            ),
         ],
     )
     async def select_callback_america(self, select, interaction):
@@ -203,11 +240,22 @@ class NationalityView(discord.ui.View):
     @discord.ui.select(
         placeholder="Asia y Oceanía",
         options=[
-            discord.SelectOption(label="Arabia Saudita", value="Arabia Saudita"),
             discord.SelectOption(label="Australia", value="Australia"),
-            discord.SelectOption(label="Corea del Sur", value="Corea del Sur"),
-            discord.SelectOption(label="Irán", value="Irán"),
-            discord.SelectOption(label="Japón", value="Japón"),
+            discord.SelectOption(label="Armernia", value="Armenia"),
+            discord.SelectOption(label="China", value="China"),
+            discord.SelectOption(label="Georgia", value="Georgia"),
+            discord.SelectOption(label="Irán", value="Iran"),
+            discord.SelectOption(label="Israel", value="Israel"),
+            discord.SelectOption(label="Japón", value="Japan"),
+            discord.SelectOption(label="Nueva Zelanda", value="New Zealand"),
+            discord.SelectOption(label="Omán", value="Oman"),
+            discord.SelectOption(label="Arabia Saudita", value="Saudi Arabia"),
+            discord.SelectOption(label="Corea del Sur", value="South Korea"),
+            discord.SelectOption(label="Túnez", value="Tunisia"),
+            discord.SelectOption(label="Turquía", value="Turkey"),
+            discord.SelectOption(label="Uzbekistán", value="Uzbekistan"),
+            discord.SelectOption(label="Argelia", value="Algeria", emoji="🌍"),
+            discord.SelectOption(label="Marruecos", value="Morocco", emoji="🌍"),
         ],
     )
     async def select_callback_asia_oceania(self, select, interaction):
@@ -405,7 +453,6 @@ async def jugador(ctx):
     await view.wait()
     total_filters = view.selected_values
 
-    # Aqui quiero poder iterar sobre todos los filtros una vez que se hayan elegido todos
     jugadores = await request.get(os.getenv("API_URL") + "/v1/players", total_filters)
     if len(jugadores) == 0:
         await ctx.send(
