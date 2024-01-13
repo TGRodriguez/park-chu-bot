@@ -22,6 +22,20 @@ selecciones = cargar_selecciones("src/selecciones.txt")
 
 bot = discord.Bot()
 
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
+    print("------")
+
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    if message.content == "selesion":
+        seleccion, bandera = random.choice(selecciones)
+        await message.channel.send(f"Mirá capo te toca jugar con {seleccion} {bandera}")
+
 
 class FavouredSide(discord.ui.View):
     def __init__(self, **kwargs):
@@ -411,20 +425,6 @@ async def jugador(ctx):
                        """
         )
 
-
-@bot.event
-async def on_ready():
-    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
-    print("------")
-
-
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
-    if message.content == "selesion":
-        seleccion, bandera = random.choice(selecciones)
-        await message.channel.send(f"Mirá capo te toca jugar con {seleccion} {bandera}")
 
 
 bot.run(os.environ.get("DISCORD_BOT_TOKEN"))
