@@ -85,7 +85,7 @@ class OptionsView(View):
                 await favoured_side_view.wait()
                 self.selected_values[value] = favoured_side_view.selected_values
                 await msg.delete()
-            elif value == "favoured_foot":
+            elif value == "strong_foot":
                 favoured_foot_view = FavouredFootView()
                 msg = await interaction.followup.send(
                     "Dale capo, decime el pie hábil",
