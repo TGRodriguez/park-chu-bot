@@ -29,7 +29,7 @@ class OptionsView(View):
             SelectOption(label="Altura Mínima", value="min_height"),
             SelectOption(label="Altura Máxima", value="max_height"),
             SelectOption(label="Lado", value="favoured_side"),
-            SelectOption(label="Pie Hábil", value="favoured_foot"),
+            SelectOption(label="Pie Hábil", value="strong_foot"),
         ],
     )
     async def select_callback(self, select, interaction):
