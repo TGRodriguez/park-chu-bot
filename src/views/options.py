@@ -8,6 +8,7 @@ from views.favoured_side import FavouredSideView
 from views.nationality import NationalityView
 from views.registered_position import RegisteredPositionView
 from views.skin_colour import SkinColourView
+from views.average import AverageInput
 
 
 class OptionsView(View):
@@ -30,6 +31,10 @@ class OptionsView(View):
             SelectOption(label="Altura Máxima", value="max_height"),
             SelectOption(label="Lado", value="favoured_side"),
             SelectOption(label="Pie Hábil", value="strong_foot"),
+            SelectOption(label="Media mínima", value="min_average"),
+            SelectOption(
+                label="Permitir jugadores clásicos", value="allow_classic_players"
+            ),
         ],
     )
     async def select_callback(self, select, interaction):
@@ -111,4 +116,10 @@ class OptionsView(View):
                 max_height_input = HeightInput(interaction, self.bot, "máxima")
                 await max_height_input.send()
                 self.selected_values[value] = max_height_input.selected_values
+            elif value == "min_average":
+                average_input = AverageInput(interaction, self.bot, "mínima")
+                await average_input.send()
+                self.selected_values[value] = average_input.selected_values
+            elif value == "allow_classic_players":
+                self.selected_values[value] = "True"
         self.stop()
