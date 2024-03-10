@@ -54,17 +54,20 @@ async def jugador(ctx):
     else:
         jugador = jugadores[0]
         await ctx.send(
-            f"""{ctx.author.mention} mirá capo, te toca comprarte a:
-                       \nNombre: {jugador['name']}
-                       \nNacionalidad: {jugador['nationality']}
-                       \nColor de Piel: {jugador['skin_colour']}
-                       \nEdad: {jugador['age']}
-                       \nAltura: {jugador['height']}
-                       \nPie Hábil: {jugador['strong_foot']}
-                       \nLado: {jugador['favoured_side']}
-                       \nPosición Registrada: {jugador['favoured_position']}
-                       \nPosiciones Disponibles: {jugador['positions']}
-                       """
+            f"{ctx.author.mention} mirá capo, te toca comprarte a:\n"
+            f"* Nombre: {jugador['name']}\n"
+            f"* Nacionalidad: {jugador['nationality']}\n"
+            f"* Color de Piel: {jugador['skin_colour']}\n"
+            f"* Edad: {jugador['age']}\n"
+            f"* Altura: {jugador['height']}\n"
+            f"* Pie Hábil: {jugador['strong_foot']}\n"
+            f"* Lado: {jugador['favoured_side']}\n"
+            f"* Posición Registrada: {jugador['favoured_position']}\n"
+            f"* Posiciones Disponibles: {jugador['positions']}\n"
+            f"* Media: {jugador['average_stats']}\n"
+            f"* Equipos:\n"
+            f"  * Selección: {jugador['teams']['national_team']}\n"
+            f"  * Club: {jugador['teams']['club_team']}\n"
         )
 
 
