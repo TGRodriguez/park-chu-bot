@@ -29,13 +29,13 @@ async def on_ready():
     print("------")
 
 
-@bot.command(guild_ids=[983516615809318972, 244297246420631552])
+@bot.command()
 async def selesion(ctx):
     seleccion, bandera = random.choice(selecciones)
     await ctx.respond(f"Mirá capo te toca jugar con {seleccion} {bandera}")
 
 
-@bot.command(guild_ids=[983516615809318972, 244297246420631552])
+@bot.command()
 async def jugador(ctx):
     view = OptionsView(ctx.bot)
 
